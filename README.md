@@ -46,8 +46,8 @@ preds = model.match(img_A_path, img_B_path)
 # you can also run the forward method directly as 
 # preds = model(img_A, img_B)
 
-# Sample matches for estimation
-matches, overlaps, precision_AtoB, precision_BtoA = model.sample(preds)
+# Sample 5000 matches for estimation
+matches, overlaps, precision_AtoB, precision_BtoA = model.sample(preds, 5000)
 
 # Convert to pixel coordinates (RoMaV2 produces matches in [-1,1]x[-1,1])
 kptsA, kptsB = model.to_pixel_coordinates(matches, H_A, W_A, H_B, W_B)
